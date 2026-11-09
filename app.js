@@ -29,6 +29,11 @@ app.get("/pokemon", (req, res) => {
   ])
 })
 
+// desafio 4
+app.get("/series", (req, res) => {
+  res.json(["Loki", "Sterling Point", "Supernatural"])
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
