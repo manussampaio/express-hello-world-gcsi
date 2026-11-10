@@ -34,6 +34,13 @@ app.get("/series", (req, res) => {
   res.json(["Loki", "Sterling Point", "Supernatural"])
 });
 
+// desafio 5
+app.get("/bug", (req, res) => {
+  const jsonInvalido = '{ "nome": "Manuella", idade: }';
+  const dados = JSON.parse(jsonInvalido);
+  res.json(dados);
+})
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
