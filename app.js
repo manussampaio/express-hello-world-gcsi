@@ -41,6 +41,18 @@ app.get("/bug", (req, res) => {
   res.json(dados);
 })
 
+// desafio 6
+app.get("/apipublica", async (req, res) => {
+  try {
+    const resposta = await fetch("https://jsonplaceholder.typicode.com/users");
+    const usuarios = await resposta.json();
+
+    res.json(usuarios);
+  } catch (erro) {
+    res.status(500).json({ erro: "Falha ao consultar a API externa" });
+  }
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
